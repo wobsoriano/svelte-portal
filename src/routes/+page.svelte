@@ -6,6 +6,10 @@
 
 	$effect(() => {
 		target = document.querySelector('#target');
+
+		setTimeout(() => {
+		  target = document.querySelector('#other');
+		}, 1000)
 	});
 
 	let open = $state(false);
@@ -13,9 +17,11 @@
 
 <button onclick={() => (open = true)}>Open Modal</button>
 
-<Portal {target}>
-	<Count />
-</Portal>
+{#if target}
+    <Portal target={target}>
+        <Count />
+    </Portal>
+{/if}
 
 <Portal target="body">
 	{#if open}

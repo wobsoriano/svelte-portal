@@ -4,8 +4,7 @@
 
 	const { children, target } = $props<{
 		children: Snippet;
-		// We accept a null value if the target is not available yet (e.g. SSR)
-		target: string | Element | null;
+		target: string | Element;
 	}>();
 
 	$effect(() => {
@@ -13,7 +12,8 @@
 
 		let element: Element | null;
 
-		if (target === null) {
+		if (!target) {
+		    console.warn(`[svelte-portal] Invalid Portal target: ${target}`)
 			return;
 		}
 
