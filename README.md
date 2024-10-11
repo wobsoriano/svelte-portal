@@ -54,6 +54,19 @@ let open = $state(false)
 </style>
 ```
 
+You can also pass components as children:
+
+```svelte
+<script>
+import { Portal } from '@jsrob/svelte-portal'
+import Component from './Component.svelte'
+</script>
+
+<Portal target="#element">
+    <Component />
+</Portal>
+```
+
 ## License
 
 MIT
