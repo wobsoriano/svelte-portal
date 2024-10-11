@@ -8,7 +8,7 @@ A Svelte 5 component that lets you render some children into a different part of
 npm install @jsrob/svelte-portal
 ```
 
-## Basic Usage
+## Usage
 
 To create a portal, use the `<Portal>` component and pass in a target and children:
 
