@@ -75,7 +75,7 @@ interface PortalProps {
    * Required. Specify target container.
    * Can either be a selector or an actual element.
    */
-  to: string | HTMLElement
+  target: string | HTMLElement
   /**
    * When `true`, the content will remain in its original
    * location instead of moved into the target container.
