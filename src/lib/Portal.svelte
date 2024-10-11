@@ -2,7 +2,7 @@
 	import { mount, unmount, type Snippet } from 'svelte';
 	import Wormhole from './Wormhole.svelte';
 
-	const { children, target, disabled = false } = $props<{
+	const { children, target, disabled = false }: {
 		children: Snippet;
 		/**
          * Required. Specify target container.
@@ -15,7 +15,7 @@
          * Can be changed dynamically.
          */
 		disabled?: boolean
-	}>();
+	} = $props();
 
 	$effect(() => {
 		let app: Record<string, unknown>;
