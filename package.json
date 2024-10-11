@@ -7,6 +7,12 @@
 		"portal",
 		"teleport"
 	],
+	"homepage": "https://github.com/wobsoriano/svelte-portal#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/wobsoriano/svelte-portal.git"
+	},
+	"bugs": "https://github.com/wobsoriano/svelte-portal/issues",
 	"version": "0.0.3",
 	"scripts": {
 		"dev": "vite dev",
