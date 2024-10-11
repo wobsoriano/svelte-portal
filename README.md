@@ -1,6 +1,6 @@
 # svelte-portal
 
-A component that lets you render some children into a different part of the DOM.
+A Svelte 5 component that lets you render some children into a different part of the DOM.
 
 ## Installation
 
