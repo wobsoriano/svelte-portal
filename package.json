@@ -13,7 +13,7 @@
 		"url": "git+https://github.com/wobsoriano/svelte-portal.git"
 	},
 	"bugs": "https://github.com/wobsoriano/svelte-portal/issues",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
