@@ -2,15 +2,29 @@
 	import { mount, unmount, type Snippet } from 'svelte';
 	import Wormhole from './Wormhole.svelte';
 
-	const { children, target } = $props<{
+	const { children, target, disabled = false } = $props<{
 		children: Snippet;
+		/**
+         * Required. Specify target container.
+         * Can either be a selector or an actual element.
+         */
 		target: string | Element;
+		/**
+         * When `true`, the content will remain in its original
+         * location instead of moved into the target container.
+         * Can be changed dynamically.
+         */
+		disabled?: boolean
 	}>();
 
 	$effect(() => {
 		let app: Record<string, unknown>;
 
 		let element: Element | null;
+
+		if (disabled) {
+		  return;
+		}
 
 		if (!target) {
 		    console.warn(`[svelte-portal] Invalid Portal target: ${target}`)
@@ -39,3 +53,7 @@
 		};
 	});
 </script>
+
+{#if disabled}
+    {@render children()}
+{/if}
