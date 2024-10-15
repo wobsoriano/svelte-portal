@@ -2,6 +2,10 @@
 
 A Svelte 5 component that lets you render some children into a different part of the DOM.
 
+- [x] No wrapping `div`
+- [x] No `appendChild`/`removeChild`
+- [x] Uses built-in Svelte 5 utilities
+
 ## Installation
 
 ```bash
