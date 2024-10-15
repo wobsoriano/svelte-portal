@@ -4,9 +4,11 @@ import TestPortalElement from './TestPortalElement.svelte';
 import TestPortalDynamic from './TestPortalDynamic.svelte';
 import { mount, flushSync, unmount } from 'svelte';
 
+type Mount = ReturnType<typeof mount>;
+
 describe('<Portal />', () => {
 	let target: HTMLDivElement;
-	let app: Record<string, unknown>;
+	let app: Mount;
 
 	beforeEach(() => {
 		target = document.createElement('div');
