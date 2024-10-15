@@ -71,17 +71,17 @@ You can also pass components as children:
 
 ```ts
 interface PortalProps {
-  /**
-   * Required. Specify target container.
-   * Can either be a selector or an actual element.
-   */
-  target: string | HTMLElement
-  /**
-   * When `true`, the content will remain in its original
-   * location instead of moved into the target container.
-   * Can be changed dynamically.
-   */
-  disabled?: boolean
+	/**
+	 * Required. Specify target container.
+	 * Can either be a selector or an actual element.
+	 */
+	target: string | HTMLElement;
+	/**
+	 * When `true`, the content will remain in its original
+	 * location instead of moved into the target container.
+	 * Can be changed dynamically.
+	 */
+	disabled?: boolean;
 }
 ```
 

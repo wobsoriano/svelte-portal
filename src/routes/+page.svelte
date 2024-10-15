@@ -2,15 +2,15 @@
 	import { Portal } from '$lib/index.js';
 	import Count from '../components/Count.svelte';
 
-	let target = $state<HTMLDivElement | null>(null);
+	let target = $state('#target');
 
-	$effect(() => {
-		target = document.querySelector('#target');
+	// $effect(() => {
+	// 	target = document.querySelector('#target');
 
-		setTimeout(() => {
-		  target = document.querySelector('#other');
-		}, 1000)
-	});
+	// 	setTimeout(() => {
+	// 	  target = document.querySelector('#other');
+	// 	}, 3000)
+	// });
 
 	let open = $state(false);
 </script>
@@ -18,9 +18,9 @@
 <button onclick={() => (open = true)}>Open Modal</button>
 
 {#if target}
-    <Portal target={target}>
-        <Count />
-    </Portal>
+	<Portal {target}>
+		<Count />
+	</Portal>
 {/if}
 
 <Portal target="body">
