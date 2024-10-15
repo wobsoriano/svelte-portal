@@ -6,6 +6,7 @@ import { mount, flushSync, unmount } from 'svelte';
 
 describe('<Portal />', () => {
 	let target: HTMLDivElement;
+	let app: Record<string, unknown>;
 
 	beforeEach(() => {
 		target = document.createElement('div');
@@ -15,34 +16,31 @@ describe('<Portal />', () => {
 
 	afterEach(() => {
 		document.body.removeChild(target);
+		unmount(app);
 	});
 
 	it('should be rendered in a specific HTML element using selector', () => {
-		const app = mount(TestPortalSelector, { target });
+		app = mount(TestPortalSelector, { target });
 
 		flushSync();
 
 		const renderedInTargetSelector = target.querySelector('#renderedInTargetSelector');
 
 		expect(renderedInTargetSelector).not.toBe(null);
-
-		unmount(app);
 	});
 
 	it('should be rendered in a specific HTML element using actual node', () => {
-		const app = mount(TestPortalElement, { target });
+		app = mount(TestPortalElement, { target });
 
 		flushSync();
 
 		const renderedInTargetElement = target.querySelector('#renderedInTargetElement');
 
 		expect(renderedInTargetElement).not.toBe(null);
-
-		unmount(app);
 	});
 
 	it('should be rendered in a dynamic target', async () => {
-		const app = mount(TestPortalDynamic, { target: document.body });
+		app = mount(TestPortalDynamic, { target: document.body });
 
 		flushSync();
 
@@ -57,7 +55,5 @@ describe('<Portal />', () => {
 		renderedInTargetElement = target.querySelector('#renderedInTargetElement');
 
 		expect(renderedInTargetElement).not.toBe(null);
-
-		unmount(app);
 	});
 });
