@@ -6,6 +6,7 @@ export default defineConfig(({ mode }) => ({
 		include: ['{src,test}/**/*.{test,spec}.{js,ts}'],
 		environment: 'jsdom'
 	},
+	// Fix to issue https://github.com/sveltejs/svelte/discussions/12037
 	resolve: {
 		conditions: mode === 'test' ? ['browser'] : []
 	},
