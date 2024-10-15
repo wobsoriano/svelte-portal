@@ -1,7 +1,7 @@
 import { describe, it, beforeEach, expect, afterEach } from 'vitest';
 import TestPortalSelector from './TestPortalSelector.svelte';
 import TestPortalElement from './TestPortalElement.svelte';
-import { mount, flushSync } from 'svelte';
+import { mount, flushSync, unmount } from 'svelte';
 
 describe('<Portal />', () => {
 	let target: HTMLDivElement;
@@ -17,22 +17,26 @@ describe('<Portal />', () => {
 	});
 
 	it('should be rendered in a specific HTML element using selector', () => {
-		mount(TestPortalSelector, { target });
+		const app = mount(TestPortalSelector, { target });
 
 		flushSync();
 
 		const renderedInTargetSelector = target.querySelector('#renderedInTargetSelector');
 
 		expect(renderedInTargetSelector).not.toBe(null);
+
+		unmount(app);
 	});
 
 	it('should be rendered in a specific HTML element using element', () => {
-		mount(TestPortalElement, { target });
+		const app = mount(TestPortalElement, { target });
 
 		flushSync();
 
 		const renderedInTargetElement = target.querySelector('#renderedInTargetElement');
 
 		expect(renderedInTargetElement).not.toBe(null);
+
+		unmount(app);
 	});
 });
