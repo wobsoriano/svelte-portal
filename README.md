@@ -69,6 +69,8 @@ You can also pass components as children:
 
 ### Props
 
+App props can be changed dynamically.
+
 | Prop       | Type                    | Description                                                                                               | Required |
 | ---------- | ----------------------- | --------------------------------------------------------------------------------------------------------- | -------- |
 | `target`   | `string \| HTMLElement` | Specify target container. Can either be a selector or an actual element.                                  | Yes      |
