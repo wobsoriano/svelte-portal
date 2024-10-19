@@ -69,21 +69,12 @@ You can also pass components as children:
 
 ### Props
 
-```ts
-interface PortalProps {
-	/**
-	 * Required. Specify target container.
-	 * Can either be a selector or an actual element.
-	 */
-	target: string | HTMLElement;
-	/**
-	 * When `true`, the content will remain in its original
-	 * location instead of moved into the target container.
-	 * Can be changed dynamically.
-	 */
-	disabled?: boolean;
-}
-```
+App props can be changed dynamically.
+
+| Prop       | Type                    | Description                                                                                               | Required |
+| ---------- | ----------------------- | --------------------------------------------------------------------------------------------------------- | -------- |
+| `target`   | `string \| HTMLElement` | Specify target container. Can either be a selector or an actual element.                                  | Yes      |
+| `disabled` | `boolean`               | When `true`, the content will remain in its original location instead of moved into the target container. | No       |
 
 ## License
 
