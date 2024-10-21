@@ -69,12 +69,20 @@ You can also pass components as children:
 
 ### Props
 
-App props can be changed dynamically.
+All props can be changed dynamically.
 
 | Prop       | Type                    | Description                                                                                               | Required |
 | ---------- | ----------------------- | --------------------------------------------------------------------------------------------------------- | -------- |
 | `target`   | `string \| HTMLElement` | Specify target container. Can either be a selector or an actual element.                                  | Yes      |
 | `disabled` | `boolean`               | When `true`, the content will remain in its original location instead of moved into the target container. | No       |
+
+### Caveats
+
+#### Local state lost when toggling `target` or `disabled` value
+
+When updating the `target` or `disabled` prop value, components in the default snippet are unmounted and re-mounted, which means any changes to their local state are lost.
+
+If you need to persist state, use some sort of state management.
 
 ## License
 
