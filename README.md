@@ -78,8 +78,6 @@ All props can be changed dynamically.
 
 ### Caveats
 
-#### Local state lost when toggling `target` or `disabled` value
-
 When updating the `target` or `disabled` prop value, components in the default snippet are unmounted and re-mounted, which means any changes to their local state are lost.
 
 If you need to persist state, use some sort of state management.
