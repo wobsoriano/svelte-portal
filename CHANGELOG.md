@@ -1,5 +1,11 @@
 # @jsrob/svelte-portal
 
+## 0.2.1
+
+### Patch Changes
+
+- c5162c3: Add caveat to readme
+
 ## 0.2.0
 
 ### Minor Changes
