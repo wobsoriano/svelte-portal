@@ -1,5 +1,11 @@
 # @jsrob/svelte-portal
 
+## 0.2.2
+
+### Patch Changes
+
+- df828de: Pass `{ outro: true }` to `unmount` to allow outro transitions to play when a portal is removed.
+
 ## 0.2.1
 
 ### Patch Changes
