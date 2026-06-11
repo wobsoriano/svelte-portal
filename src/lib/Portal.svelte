@@ -52,7 +52,7 @@
 
 		return () => {
 			if (app) {
-				unmount(app);
+				unmount(app, { outro: true });
 			}
 		};
 	});
